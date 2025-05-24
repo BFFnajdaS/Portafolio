@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about my development process for website and database projects. From discovery to delivery, I follow a structured approach to ensure successful outcomes.">
+    <title>Development Process - Website & Database Developer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">Qari</a>
+            </div>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="process.html" class="nav-link">Process</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
+            <a href="process.html" class="mobile-nav-link">Process</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-on-scroll">My Development Process</h1>
+                <p class="hero-subtitle animate-on-scroll delay-1">A methodical approach to ensure successful project outcomes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Overview -->
+    <section class="section process-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>How I Work</h2>
+            </div>
+            <p class="process-intro text-center animate-on-scroll">
+                I follow a structured, collaborative process for all projects to ensure high-quality outcomes, transparent communication, and on-time delivery. My approach is designed to minimize surprises and maximize value for your investment.
+            </p>
+
+            <div class="process-steps-grid animate-on-scroll delay-1">
+                <div class="process-step">
+                    <div class="step-circle">1</div>
+                    <h3>Discovery</h3>
+                    <p>Understanding your business needs and project requirements</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">2</div>
+                    <h3>Planning</h3>
+                    <p>Creating a detailed roadmap for your project implementation</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">3</div>
+                    <h3>Design</h3>
+                    <p>Building your solution with best coding practices</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">4</div>
+                    <h3>Development</h3>
+                    <p>Creating the actual solution based on plans and designs</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">5</div>
+                    <h3>Testing</h3>
+                    <p>Ensuring quality and optimal performance</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">6</div>
+                    <h3>Deployment</h3>
+                    <p>Launching your solution to the world</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-circle">7</div>
+                    <h3>Support</h3>
+                    <p>Providing ongoing maintenance and enhancements</p>
+                </div>
+            </div>
+            <style>
+                .process-steps-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 30px;
+                    margin-top: 50px;
+                }
+                
+                .process-step {
+                    text-align: center;
+                    width: 180px;
+                    margin-bottom: 30px;
+                }
+                
+                .step-circle {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    background-color: #4ecdc4;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 15px;
+                    font-size: 24px;
+                    font-weight: bold;
+                    position: relative;
+                }
+                
+                .step-circle::after {
+                    content: '';
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #4ecdc4;
+                    right: -30px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                
+                .process-step:last-child .step-circle::after {
+                    display: none;
+                }
+                
+                .process-step h3 {
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+                
+                .process-step p {
+                    font-size: 14px;
+                    color: #666;
+                }
+                
+                @media (max-width: 768px) {
+                    .process-steps-grid {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    
+                    .step-circle::after {
+                        width: 2px;
+                        height: 30px;
+                        right: 50%;
+                        top: 60px;
+                        transform: translateX(50%);
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- Discovery Phase -->
+    <section id="discovery" class="section process-detail">
+        <div class="container">
+            <div class="process-detail-grid">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">1</div>
+                        <h2>Discovery</h2>
+                    </div>
+                    <p>The discovery phase is all about understanding your business, goals, and specific requirements for the project. This crucial first step ensures that I can create a solution that truly addresses your needs.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Initial consultation to understand your vision</li>
+                        <li><i class="fas fa-check-circle"></i> Identifying key stakeholders and end users</li>
+                        <li><i class="fas fa-check-circle"></i> Defining project goals and success criteria</li>
+                        <li><i class="fas fa-check-circle"></i> Requirements gathering and documentation</li>
+                        <li><i class="fas fa-check-circle"></i> Technical feasibility assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Budget and timeline discussions</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>A comprehensive understanding of your business needs, target audience, and project requirements, laying the foundation for successful project planning and execution.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planning Phase -->
+    <section id="planning" class="section process-detail bg-light">
+        <div class="container">
+            <div class="process-detail-grid reverse">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">2</div>
+                        <h2>Planning</h2>
+                    </div>
+                    <p>With a clear understanding of your requirements, I develop a detailed project plan that outlines the scope, timeline, deliverables, and resources needed to successfully complete your project.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Developing a detailed project scope document</li>
+                        <li><i class="fas fa-check-circle"></i> Creating a project timeline with key milestones</li>
+                        <li><i class="fas fa-check-circle"></i> Resource allocation and task scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> Technology stack selection</li>
+                        <li><i class="fas fa-check-circle"></i> Risk assessment and mitigation planning</li>
+                        <li><i class="fas fa-check-circle"></i> Creating a communication plan</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>A comprehensive project plan and proposal that outlines the project scope, timeline, deliverables, and costs. This document serves as our roadmap for the entire project.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Phase -->
+    <section id="design" class="section process-detail">
+        <div class="container">
+            <div class="process-detail-grid">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">3</div>
+                        <h2>Design</h2>
+                    </div>
+                    <p>The design phase transforms the project requirements into visual concepts and structural blueprints. For websites, this includes UI/UX design; for databases, this involves schema modeling and architecture design.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Creating wireframes and mockups</li>
+                        <li><i class="fas fa-check-circle"></i> User interface (UI) design</li>
+                        <li><i class="fas fa-check-circle"></i> User experience (UX) mapping</li>
+                        <li><i class="fas fa-check-circle"></i> Database schema design</li>
+                        <li><i class="fas fa-check-circle"></i> System architecture planning</li>
+                        <li><i class="fas fa-check-circle"></i> Design reviews and iterations</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>Finalized designs and architectural documents that provide a clear visual and structural blueprint for the development phase. Client approval at this stage ensures the final product will meet expectations.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Phase -->
+    <section id="development" class="section process-detail bg-light">
+        <div class="container">
+            <div class="process-detail-grid reverse">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">4</div>
+                        <h2>Development</h2>
+                    </div>
+                    <p>This is where your project comes to life. During the development phase, I write clean, efficient, and maintainable code to implement the design and functionality outlined in the previous phases.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Front-end development (HTML, CSS, JavaScript)</li>
+                        <li><i class="fas fa-check-circle"></i> Back-end development</li>
+                        <li><i class="fas fa-check-circle"></i> Database implementation</li>
+                        <li><i class="fas fa-check-circle"></i> API development and integration</li>
+                        <li><i class="fas fa-check-circle"></i> Content management system setup (if needed)</li>
+                        <li><i class="fas fa-check-circle"></i> Regular progress updates and demos</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>A fully functional development version of your website or database solution that implements all planned features and follows best practices for code quality and performance.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testing Phase -->
+    <section id="testing" class="section process-detail">
+        <div class="container">
+            <div class="process-detail-grid">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">5</div>
+                        <h2>Testing</h2>
+                    </div>
+                    <p>Thorough testing ensures that your website or database functions correctly, performs well, and provides a good user experience across different devices and scenarios.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Functionality testing</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-browser and cross-device testing</li>
+                        <li><i class="fas fa-check-circle"></i> Performance optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Security testing</li>
+                        <li><i class="fas fa-check-circle"></i> User acceptance testing</li>
+                        <li><i class="fas fa-check-circle"></i> Bug fixes and refinements</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>A thoroughly tested and optimized solution that functions correctly across different environments and meets all the specified requirements and performance standards.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Phase -->
+    <section id="deployment" class="section process-detail bg-light">
+        <div class="container">
+            <div class="process-detail-grid reverse">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">6</div>
+                        <h2>Deployment</h2>
+                    </div>
+                    <p>Once testing is complete and you approve the final product, it's time to launch your website or implement your database solution in a production environment.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Preparing the production environment</li>
+                        <li><i class="fas fa-check-circle"></i> Domain configuration (for websites)</li>
+                        <li><i class="fas fa-check-circle"></i> Database migration (for database projects)</li>
+                        <li><i class="fas fa-check-circle"></i> Final quality assurance checks</li>
+                        <li><i class="fas fa-check-circle"></i> Documentation delivery</li>
+                        <li><i class="fas fa-check-circle"></i> User training (if needed)</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>Your website goes live or your database solution becomes operational. Comprehensive documentation and any necessary training are provided to ensure a smooth transition.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Phase -->
+    <section id="support" class="section process-detail">
+        <div class="container">
+            <div class="process-detail-grid">
+                <div class="process-detail-content animate-on-scroll">
+                    <div class="process-phase">
+                        <div class="phase-number">7</div>
+                        <h2>Support & Maintenance</h2>
+                    </div>
+                    <p>My relationship with clients doesn't end at launch. I offer ongoing support and maintenance to ensure your website or database continues to function optimally and evolve with your business needs.</p>
+                    
+                    <h3>What Happens:</h3>
+                    <ul class="process-list">
+                        <li><i class="fas fa-check-circle"></i> Post-launch support period</li>
+                        <li><i class="fas fa-check-circle"></i> Regular security updates</li>
+                        <li><i class="fas fa-check-circle"></i> Performance monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Content updates and additions</li>
+                        <li><i class="fas fa-check-circle"></i> Feature enhancements</li>
+                        <li><i class="fas fa-check-circle"></i> Ongoing technical support</li>
+                    </ul>
+                    
+                    <div class="process-outcome">
+                        <h3>Outcome:</h3>
+                        <p>Your website or database solution remains secure, up-to-date, and continues to meet your business needs as they evolve over time. Different support packages are available based on your specific requirements.</p>
+                    </div>
+                </div>
+                <div class="process-detail-image animate-on-scroll delay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Collaboration -->
+    <section class="section client-collaboration bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Collaboration</h2>
+            </div>
+            <div class="collaboration-content text-center animate-on-scroll">
+                <p class="lead">Communication is key to successful projects. Here's how we'll collaborate throughout the process:</p>
+                
+                <div class="collaboration-grid">
+                    <div class="collaboration-item animate-on-scroll">
+                        <div class="collaboration-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Regular Updates</h3>
+                        <p>I provide consistent progress updates through your preferred communication channels to keep you informed every step of the way.</p>
+                    </div>
+                    
+                    <div class="collaboration-item animate-on-scroll delay-1">
+                        <div class="collaboration-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Milestone Reviews</h3>
+                        <p>At key project milestones, we'll review progress together to ensure the project is on track and aligned with your expectations.</p>
+                    </div>
+                    
+                    <div class="collaboration-item animate-on-scroll delay-2">
+                        <div class="collaboration-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Clear Documentation</h3>
+                        <p>All project requirements, decisions, and changes are thoroughly documented to maintain clarity and accountability.</p>
+                    </div>
+                    
+                    <div class="collaboration-item animate-on-scroll delay-3">
+                        <div class="collaboration-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Iterative Feedback</h3>
+                        <p>Your feedback is incorporated throughout the process, ensuring the final product truly meets your needs and expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Tools -->
+    <section class="section project-tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Project Management Tools</h2>
+            </div>
+            <p class="text-center animate-on-scroll">To ensure efficient project execution and transparent communication, I use industry-standard tools for project management, design, development, and collaboration:</p>
+            
+            <div class="tools-grid">
+                <div class="tool-category animate-on-scroll">
+                    <h3><i class="fas fa-tasks"></i> Project Management</h3>
+                    <ul class="tool-list">
+                        <li>Trello / Asana / Jira</li>
+                        <li>Gantt Charts</li>
+                        <li>Google Workspace</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-category animate-on-scroll delay-1">
+                    <h3><i class="fas fa-pencil-ruler"></i> Design</h3>
+                    <ul class="tool-list">
+                        <li>Figma / Adobe XD</li>
+                        <li>Wireframing Tools</li>
+                        <li>Prototyping Platforms</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-category animate-on-scroll delay-2">
+                    <h3><i class="fas fa-code"></i> Development</h3>
+                    <ul class="tool-list">
+                        <li>Git Version Control</li>
+                        <li>Modern IDEs</li>
+                        <li>Testing Frameworks</li>
+                    </ul>
+                </div>
+                
+                <div class="tool-category animate-on-scroll delay-3">
+                    <h3><i class="fas fa-comments"></i> Communication</h3>
+                    <ul class="tool-list">
+                        <li>Slack / Discord / Teams</li>
+                        <li>Virtual Meeting Platforms</li>
+                        <li>Email & Documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Start -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-content text-center animate-on-scroll">
+                <h2>Ready to Start Your Project?</h2>
+                <p class="mb-4">Let's work together to bring your vision to life with a process designed for success.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-accent">Contact Me</a>
+                    <a href="portfolio.html" class="btn">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Qari</div>
+                <div class="social-links">
+
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year">2025</span> Qari. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

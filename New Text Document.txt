@@ -1,0 +1,2 @@
+start admin/index.html
+start index.html

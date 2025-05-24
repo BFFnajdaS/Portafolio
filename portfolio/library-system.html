@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study of Library Management System - A comprehensive solution for managing library operations including book inventory, member management, and loan tracking.">
+    <title>Library Management System Case Study - Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/ui/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">Qari</a>
+            </div>
+            <nav class="nav-desktop">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="../services.html" class="nav-link">Services</a>
+                <a href="../portfolio.html" class="nav-link">Portfolio</a>
+                <a href="../process.html" class="nav-link">Process</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="../index.html" class="mobile-nav-link">Home</a>
+            <a href="../about.html" class="mobile-nav-link">About</a>
+            <a href="../services.html" class="mobile-nav-link">Services</a>
+            <a href="../portfolio.html" class="mobile-nav-link">Portfolio</a>
+            <a href="../process.html" class="mobile-nav-link">Process</a>
+            <a href="../contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- Case Study Header -->
+    <section class="hero case-study-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="case-study-breadcrumb animate-on-scroll">
+                    <a href="../portfolio.html">Portfolio</a> / <span>Library Management System</span>
+                </div>
+                <h1 class="hero-title animate-on-scroll">Library Management System</h1>
+                <p class="hero-subtitle animate-on-scroll delay-1">A comprehensive solution for streamlining library operations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Overview -->
+    <section class="section case-study-overview">
+        <div class="container">
+            <div class="case-study-grid">
+                <div class="case-study-image animate-on-scroll">
+                </div>
+                <div class="case-study-details animate-on-scroll delay-1">
+                    <h2>Project Overview</h2>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <strong>Client:</strong> Public Library
+                        </div>
+                        <div class="meta-item">
+                            <strong>Timeline:</strong> 3 months
+                        </div>
+                        <div class="meta-item">
+                            <strong>Role:</strong> Database Designer & Full-Stack Developer
+                        </div>
+                        <div class="meta-item">
+                            <strong>Technologies:</strong>
+                            <ul class="tech-list">
+                                <li>HTML5/CSS3</li>
+                                <li>JavaScript</li>
+                                <li>SQL Database</li>
+                                <li>Server-Side Programming</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="section case-study-challenge bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Challenge</h2>
+            </div>
+            <div class="challenge-content animate-on-scroll">
+                <p class="lead">The public library was facing several operational challenges with their existing manual system:</p>
+                <div class="challenge-list">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="challenge-text">
+                            <h3>Inefficient Book Management</h3>
+                            <p>Tracking thousands of books across multiple categories and locations was time-consuming and error-prone.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="challenge-text">
+                            <h3>Manual Lending Process</h3>
+                            <p>The paper-based lending system led to long wait times for patrons and created excessive administrative work.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="challenge-text">
+                            <h3>Overdue Management</h3>
+                            <p>Tracking overdue books and notifying members was inconsistent, resulting in delayed returns and unavailable inventory.</p>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="challenge-text">
+                            <h3>Reporting Limitations</h3>
+                            <p>Generating insights about library usage, popular materials, and resource allocation was difficult without centralized data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution -->
+    <section class="section case-study-solution">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Solution</h2>
+            </div>
+            <div class="solution-content animate-on-scroll">
+                <p>I developed a comprehensive Library Management System that digitized and automated key operations, improving efficiency and user experience for both staff and library members.</p>
+                
+                <div class="solution-features">
+                    <div class="feature-item animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Book Cataloging</h3>
+                            <p>A digital catalog with advanced search functionality, categorization, and status tracking.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item animate-on-scroll delay-1">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Member Management</h3>
+                            <p>Comprehensive member profiles with borrowing history, status, and contact information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item animate-on-scroll delay-2">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Loan Processing</h3>
+                            <p>Streamlined check-out and return processes with barcode scanning integration and due date management.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item animate-on-scroll delay-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Notifications System</h3>
+                            <p>Automated email reminders for due dates, overdue books, and holds availability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item animate-on-scroll delay-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Reporting Dashboard</h3>
+                            <p>Customizable reports on circulation statistics, inventory, popular materials, and member activity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item animate-on-scroll delay-5">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Responsive Design</h3>
+                            <p>Mobile-friendly interface allowing staff to perform operations from anywhere in the library.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Design -->
+    <section class="section case-study-database bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Database Architecture</h2>
+            </div>
+            <p class="text-center animate-on-scroll">The core of the system is a well-structured relational database that efficiently organizes and connects library data.</p>
+            
+            <div class="schema-container animate-on-scroll delay-1">
+                <div class="schema-visualization">
+                    <div class="schema-table">
+                        <div class="schema-table-title">BOOKS</div>
+                        <div class="schema-field"><span class="schema-pk">book_id</span> INT PRIMARY KEY</div>
+                        <div class="schema-field">title VARCHAR(255)</div>
+                        <div class="schema-field">author VARCHAR(255)</div>
+                        <div class="schema-field">isbn VARCHAR(20)</div>
+                        <div class="schema-field">published_date DATE</div>
+                        <div class="schema-field"><span class="schema-fk">category_id</span> INT FOREIGN KEY</div>
+                        <div class="schema-field">status VARCHAR(50)</div>
+                    </div>
+                    
+                    <div class="schema-relationship">
+                        <i class="fas fa-long-arrow-alt-down"></i>
+                    </div>
+                    
+                    <div class="schema-table">
+                        <div class="schema-table-title">LOANS</div>
+                        <div class="schema-field"><span class="schema-pk">loan_id</span> INT PRIMARY KEY</div>
+                        <div class="schema-field"><span class="schema-fk">book_id</span> INT FOREIGN KEY</div>
+                        <div class="schema-field"><span class="schema-fk">member_id</span> INT FOREIGN KEY</div>
+                        <div class="schema-field">checkout_date DATE</div>
+                        <div class="schema-field">due_date DATE</div>
+                        <div class="schema-field">return_date DATE</div>
+                        <div class="schema-field">status VARCHAR(50)</div>
+                    </div>
+                    
+                    <div class="schema-relationship">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </div>
+                    
+                    <div class="schema-table">
+                        <div class="schema-table-title">MEMBERS</div>
+                        <div class="schema-field"><span class="schema-pk">member_id</span> INT PRIMARY KEY</div>
+                        <div class="schema-field">name VARCHAR(255)</div>
+                        <div class="schema-field">email VARCHAR(255)</div>
+                        <div class="schema-field">phone VARCHAR(20)</div>
+                        <div class="schema-field">join_date DATE</div>
+                        <div class="schema-field">status VARCHAR(50)</div>
+                    </div>
+                </div>
+                
+                <div class="schema-description">
+                    <p>This simplified schema illustrates the core relationships between books, members, and loans. The actual implementation includes additional tables for categories, publishers, reservations, and more.</p>
+                    <p>The database design follows normalization principles to minimize redundancy while optimizing query performance for common operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="section case-study-process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Development Process</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Requirements Gathering</h3>
+                        <p>I conducted detailed interviews with librarians and staff to understand workflow pain points and essential features needed in the system.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll delay-1">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Database Design</h3>
+                        <p>Developing the data model was a critical phase, ensuring proper relationships between entities while planning for future scalability.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll delay-2">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>User Interface Design</h3>
+                        <p>Creating intuitive interfaces for both staff and member portals with a focus on ease of use and efficiency.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll delay-3">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Development & Testing</h3>
+                        <p>Incremental development with regular feedback sessions and testing with library staff to refine functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll delay-4">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Data Migration</h3>
+                        <p>Careful transfer of existing book and member records from the previous system, with validation protocols to ensure data integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll delay-5">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Training & Implementation</h3>
+                        <p>Comprehensive training sessions for library staff, with a phased rollout approach to minimize disruption to services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Interface Showcase -->
+    <section class="section case-study-ui bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>User Interface</h2>
+            </div>
+            <div class="ui-showcase animate-on-scroll">
+                <div class="ui-screens">
+                    <div class="ui-screen">
+                        <h3>Dashboard</h3>
+                        <img src="../assets/images/projects/DASHBOARD.png" alt="Library System Dashboard" class="ui-image">
+                        <p>The staff dashboard provides at-a-glance insights into library activity and quick access to common tasks.</p>
+                    </div>
+                    
+                    <div class="ui-screen">
+                        <h3>Book Management</h3>
+                        <img src="../assets/images/projects/library-books.png" alt="Book Management Interface" class="ui-image">
+                        <p>The book management interface allows for easy addition, editing, and searching of the library catalog.</p>
+                    </div>
+                    
+                    <div class="ui-screen">
+                        <h3>Loan Processing</h3>
+                        <img src="../assets/images/projects/loan.png" alt="Loan Processing Interface" class="ui-image">
+                        <p>The loan processing screen streamlines check-outs and returns with barcode scanning support and member lookup.</p>
+                    </div>
+                </div>
+                
+                <div class="ui-description">
+                    <h3>Design Principles</h3>
+                    <ul class="principle-list">
+                        <li><i class="fas fa-check"></i> <strong>Intuitive Navigation:</strong> Clear menu structure and consistent layout across the application</li>
+                        <li><i class="fas fa-check"></i> <strong>Efficient Workflows:</strong> Minimized clicks for common tasks through careful UX design</li>
+                        <li><i class="fas fa-check"></i> <strong>Visual Hierarchy:</strong> Important information and actions are visually prominent</li>
+                        <li><i class="fas fa-check"></i> <strong>Responsive Design:</strong> Adapts to different screen sizes for use on various devices</li>
+                        <li><i class="fas fa-check"></i> <strong>Accessibility:</strong> Designed for keyboard navigation and screen reader compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Impact -->
+    <section class="section case-study-results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Results & Impact</h2>
+            </div>
+            <div class="results-content animate-on-scroll">
+                <p class="lead text-center">The implementation of the Library Management System delivered significant improvements to library operations and services:</p>
+                
+                <div class="results-grid">
+                    <div class="result-item animate-on-scroll">
+                        <div class="result-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="result-text">
+                            <h3>70% Reduction</h3>
+                            <p>in time spent on administrative tasks, allowing staff to focus more on member services</p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-item animate-on-scroll delay-1">
+                        <div class="result-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="result-text">
+                            <h3>90% Faster</h3>
+                            <p>book location and availability checking, improving member satisfaction</p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-item animate-on-scroll delay-2">
+                        <div class="result-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="result-text">
+                            <h3>35% Increase</h3>
+                            <p>in book circulation within six months of system implementation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="result-item animate-on-scroll delay-3">
+                        <div class="result-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="result-text">
+                            <h3>40% Decrease</h3>
+                            <p>in overdue books through automated reminders and better tracking</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-highlight animate-on-scroll">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The Library Management System transformed our operations completely. What used to take us hours now takes minutes, and our members love how quickly we can help them find and borrow books. The reporting features have also given us valuable insights we never had before."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-name">John Davis</div>
+                        <div class="author-title">Head Librarian, Public Library</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges & Solutions -->
+    <section class="section case-study-challenges bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Challenges & Solutions</h2>
+            </div>
+            <div class="challenges-content animate-on-scroll">
+                <div class="challenge-solution-item">
+                    <div class="cs-challenge">
+                        <h3><i class="fas fa-exclamation-circle"></i> Challenge</h3>
+                        <p>Legacy data migration presented issues with inconsistent formats and incomplete records.</p>
+                    </div>
+                    <div class="cs-solution">
+                        <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+                        <p>Developed custom data cleaning scripts and a staged migration process with validation at each step to ensure data integrity.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="cs-challenge">
+                        <h3><i class="fas fa-exclamation-circle"></i> Challenge</h3>
+                        <p>Staff members had varying levels of technical experience, creating training challenges.</p>
+                    </div>
+                    <div class="cs-solution">
+                        <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+                        <p>Created role-specific training materials with hands-on workshops and a comprehensive help system built into the application.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="cs-challenge">
+                        <h3><i class="fas fa-exclamation-circle"></i> Challenge</h3>
+                        <p>Complex reporting requirements needed to accommodate various stakeholder needs.</p>
+                    </div>
+                    <div class="cs-solution">
+                        <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+                        <p>Implemented a flexible reporting engine with customizable parameters and saved report templates for recurring needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Takeaways -->
+    <section class="section case-study-takeaways">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Takeaways</h2>
+            </div>
+            <div class="takeaways-content animate-on-scroll">
+                <div class="takeaway-item">
+                    <div class="takeaway-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="takeaway-text">
+                        <h3>User-Centered Design Matters</h3>
+                        <p>Understanding the day-to-day workflows of librarians was critical to creating an interface that truly enhanced their work rather than complicating it.</p>
+                    </div>
+                </div>
+                
+                <div class="takeaway-item">
+                    <div class="takeaway-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="takeaway-text">
+                        <h3>Solid Database Design is Fundamental</h3>
+                        <p>Investing time in proper data modeling early in the project created a strong foundation that supported all features and enabled future expansion.</p>
+                    </div>
+                </div>
+                
+                <div class="takeaway-item">
+                    <div class="takeaway-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="takeaway-text">
+                        <h3>Training is as Important as Development</h3>
+                        <p>Even the best system fails if users can't utilize it effectively. Comprehensive training was key to successful adoption.</p>
+                    </div>
+                </div>
+                
+                <div class="takeaway-item">
+                    <div class="takeaway-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="takeaway-text">
+                        <h3>Data Insights Drive Value</h3>
+                        <p>The reporting capabilities unlocked valuable insights that helped the library better serve community needs and allocate resources effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="section cta">
+        <div class="container">
+            <div class="cta-content text-center animate-on-scroll">
+                <h2>Need a Similar Solution?</h2>
+                <p class="mb-4">Let's discuss how I can help you build a custom database application for your business needs.</p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="btn btn-accent">Contact Me</a>
+                    <a href="../portfolio.html" class="btn">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Qari</div>
+                <div class="social-links">
+
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; <span id="current-year">2025</span> Qari. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin dashboard for managing project requests">
+    <title>Admin Dashboard - Project Requests</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/ui/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <style>
+        /* Admin specific styles */
+        .admin-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+        
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .login-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .request-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .request-table th,
+        .request-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .request-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .request-table tr:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .request-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .status-new {
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-in-progress {
+            background-color: #fff8e1;
+            color: #ff8f00;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-completed {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-rejected {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            transition: color 0.2s;
+            margin-right: 10px;
+        }
+        
+        .action-btn:hover {
+            color: var(--accent-color);
+        }
+        
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 50px auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 800px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .request-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .status-options {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .status-select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid var(--medium-gray);
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .request-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .request-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        .no-requests {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .empty-icon {
+            font-size: 3rem;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">Qari</a>
+            </div>
+            <div id="admin-nav">
+                <a href="../index.html" class="nav-link">Back to Website</a>
+                <button id="logout-btn" class="btn" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Content -->
+    <main id="admin-content">
+        <!-- Login Form (shown by default) -->
+        <div id="login-section" class="login-container">
+            <h2 class="login-title">Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" required>
+                </div>
+                <div id="login-error" style="color: red; margin-bottom: 15px; display: none;">
+                    Invalid username or password.
+                </div>
+                <button type="submit" class="btn btn-accent" style="width: 100%;">Login</button>
+            </form>
+        </div>
+
+        <!-- Dashboard (hidden by default) -->
+        <div id="dashboard-section" class="admin-container" style="display: none;">
+            <div class="dashboard-header">
+                <h2>Project Requests</h2>
+                <div>
+                    <button id="refresh-btn" class="btn btn-secondary">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Project Requests Table -->
+            <div id="requests-container">
+                <!-- Table will be populated by JavaScript -->
+                <div class="no-requests" id="no-requests">
+                    <div class="empty-icon"><i class="fas fa-inbox"></i></div>
+                    <h3>No Project Requests Yet</h3>
+                    <p>When clients submit requests through your contact form, they will appear here.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Request Detail Modal -->
+        <div id="detail-modal" class="detail-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Request Details</h2>
+                <div id="request-details">
+                    <!-- Details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Demo admin credentials (in a real app, this would be server-side)
+        const ADMIN_USERNAME = 'admin';
+        const ADMIN_PASSWORD = '#creeper12345';
+        
+        // DOM Elements
+        const loginForm = document.getElementById('login-form');
+        const loginSection = document.getElementById('login-section');
+        const dashboardSection = document.getElementById('dashboard-section');
+        const loginError = document.getElementById('login-error');
+        const logoutBtn = document.getElementById('logout-btn');
+        const requestsContainer = document.getElementById('requests-container');
+        const noRequests = document.getElementById('no-requests');
+        const detailModal = document.getElementById('detail-modal');
+        const requestDetails = document.getElementById('request-details');
+        const refreshBtn = document.getElementById('refresh-btn');
+        
+        // Check if user is logged in
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('admin_logged_in') === 'true';
+            loginSection.style.display = isLoggedIn ? 'none' : 'block';
+            dashboardSection.style.display = isLoggedIn ? 'block' : 'none';
+            logoutBtn.style.display = isLoggedIn ? 'inline-block' : 'none';
+            
+            if (isLoggedIn) {
+                loadRequests();
+            }
+        }
+        
+        // Handle login form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                localStorage.setItem('admin_logged_in', 'true');
+                loginError.style.display = 'none';
+                checkLogin();
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+        
+        // Handle logout
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('admin_logged_in');
+            checkLogin();
+        });
+        
+        // Load project requests from localStorage
+        function loadRequests() {
+            // In a real app, this would fetch from a database
+            let projectRequests = JSON.parse(localStorage.getItem('project_requests')) || [];
+            
+            if (projectRequests.length === 0) {
+                noRequests.style.display = 'block';
+                requestsContainer.innerHTML = noRequests.outerHTML;
+                return;
+            }
+            
+            noRequests.style.display = 'none';
+            
+            // Sort requests with newest first
+            projectRequests.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Create table
+            let tableHTML = `
+                <table class="request-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Project Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            // Add rows for each request
+            projectRequests.forEach((request, index) => {
+                const statusClass = `status-${request.status.toLowerCase().replace(' ', '-')}`;
+                
+                tableHTML += `
+                    <tr data-index="${index}">
+                        <td>${formatDate(request.date)}</td>
+                        <td>${escapeHTML(request.name)}</td>
+                        <td>${escapeHTML(request.projectType)}</td>
+                        <td><span class="${statusClass}">${request.status}</span></td>
+                        <td>
+                            <button class="action-btn view-btn" data-index="${index}">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn delete-btn" data-index="${index}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            requestsContainer.innerHTML = tableHTML;
+            
+            // Add event listeners to action buttons
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    showRequestDetails(projectRequests[index], index);
+                });
+            });
+            
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    if (confirm('Are you sure you want to delete this request?')) {
+                        projectRequests.splice(index, 1);
+                        localStorage.setItem('project_requests', JSON.stringify(projectRequests));
+                        loadRequests();
+                    }
+                });
+            });
+        }
+        
+        // Show request details in modal
+        function showRequestDetails(request, index) {
+            let detailsHTML = `
+                <div class="request-detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">Submitted On:</div>
+                        <div>${formatDate(request.date)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Status:</div>
+                        <div><span class="status-${request.status.toLowerCase().replace(' ', '-')}">${request.status}</span></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Name:</div>
+                        <div>${escapeHTML(request.name)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Email:</div>
+                        <div>${escapeHTML(request.email)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Phone:</div>
+                        <div>${escapeHTML(request.phone || 'Not provided')}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Project Type:</div>
+                        <div>${escapeHTML(request.projectType)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Budget:</div>
+                        <div>${escapeHTML(request.budget || 'Not specified')}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Timeline:</div>
+                        <div>${escapeHTML(request.timeline || 'Not specified')}</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Project Details:</div>
+                    <div>${escapeHTML(request.message).replace(/\n/g, '<br>')}</div>
+                </div>
+                <div class="status-options">
+                    <div class="detail-label">Update Status:</div>
+                    <select id="status-select" class="status-select">
+                        <option value="New" ${request.status === 'New' ? 'selected' : ''}>New</option>
+                        <option value="In Progress" ${request.status === 'In Progress' ? 'selected' : ''}>In Progress</option>
+                        <option value="Completed" ${request.status === 'Completed' ? 'selected' : ''}>Completed</option>
+                        <option value="Rejected" ${request.status === 'Rejected' ? 'selected' : ''}>Rejected</option>
+                    </select>
+                    <button id="update-status-btn" class="btn btn-secondary" data-index="${index}">Update Status</button>
+                </div>
+            `;
+            
+            requestDetails.innerHTML = detailsHTML;
+            detailModal.style.display = 'block';
+            
+            // Add event listener to update status button
+            document.getElementById('update-status-btn').addEventListener('click', function() {
+                const statusSelect = document.getElementById('status-select');
+                const newStatus = statusSelect.value;
+                const requestIndex = parseInt(this.getAttribute('data-index'));
+                
+                // Update status in localStorage
+                let projectRequests = JSON.parse(localStorage.getItem('project_requests')) || [];
+                projectRequests[requestIndex].status = newStatus;
+                localStorage.setItem('project_requests', JSON.stringify(projectRequests));
+                
+                // Refresh requests table
+                loadRequests();
+                
+                // Close modal
+                detailModal.style.display = 'none';
+            });
+        }
+        
+        // Close modal when clicking the close button or outside the modal
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            detailModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === detailModal) {
+                detailModal.style.display = 'none';
+            }
+        });
+        
+        // Refresh button
+        refreshBtn.addEventListener('click', loadRequests);
+        
+        // Helper function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        }
+        
+        // Helper function to escape HTML
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+        
+        // Initialize
+        checkLogin();
+        
+        // DEMO: Add sample project requests for demonstration
+        function addDemoData() {
+            const demoRequests = [
+                {
+                    name: "John Smith",
+                    email: "john@example.com",
+                    phone: "555-123-4567",
+                    projectType: "Website Development",
+                    budget: "$1,000 - $3,000",
+                    timeline: "Within 1 month",
+                    message: "I need a new website for my small business. Looking for a clean, modern design with about 5-7 pages including a contact form.",
+                    date: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(), // 2 days ago
+                    status: "In Progress"
+                },
+                {
+                    name: "Sarah Johnson",
+                    email: "sarah@example.com",
+                    phone: "555-987-6543",
+                    projectType: "Database Solution",
+                    budget: "$3,000 - $5,000",
+                    timeline: "1-3 months",
+                    message: "We need a custom inventory management database for our retail store. We currently have about 2,000 products that need to be tracked across 3 locations.",
+                    date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5 days ago
+                    status: "New"
+                },
+                {
+                    name: "Michael Williams",
+                    email: "michael@example.com",
+                    phone: "",
+                    projectType: "Website & Database",
+                    budget: "$5,000 - $10,000",
+                    timeline: "Flexible",
+                    message: "I'm looking to create an e-commerce platform for my handmade products. Need both a customer-facing website and an inventory/order management system.",
+                    date: new Date().toISOString(), // Today
+                    status: "New"
+                }
+            ];
+            
+            localStorage.setItem('project_requests', JSON.stringify(demoRequests));
+            loadRequests();
+        }
+        
+        // Check if this is the first time loading the admin panel
+        if (!localStorage.getItem('admin_demo_loaded')) {
+            addDemoData();
+            localStorage.setItem('admin_demo_loaded', 'true');
+        }
+    </script>
+</body>
+</html>
